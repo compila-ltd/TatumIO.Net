@@ -21,7 +21,7 @@
 		<PackageProjectUrl>https://github.com/compila-ltd/TatumIO.Net</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/compila-ltd/TatumIO.Net</RepositoryUrl>
 		<PackageId>TatumIO.Net</PackageId>
-		<Version>0.1.0</Version>
+		<Version>0.2.0</Version>
 		<Authors>Eyonys Gonzalez Marcaida</Authors>
 		<Company>Compila</Company>
 		<PackageDescription>SDK for TatumIO Api.</PackageDescription>

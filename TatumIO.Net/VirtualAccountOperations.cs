@@ -12,6 +12,7 @@ namespace TatumIO.Net
 	{
 		Task<ServiceBaseResponse> GetAccountInfo(string accountId);
 		Task<ServiceBaseResponse> CreateDepositAddress(string accountId, int? index);
+		Task<ServiceBaseResponse> AssignNewAddress(string accountId, string address);
 	}
 	internal class VirtualAccountOperations : IVirtualAccountOperations
 	{
@@ -24,7 +25,7 @@ namespace TatumIO.Net
 			OffchainEndpoint = new VirtualAccountHttpApiClient(TatumIOV3Endpoints.VirtualAccountsOffchainUrl, apiKey);
 		}
 
-		#region Ledger
+		#region Account
 		public async Task<ServiceBaseResponse> GetAccountInfo(string accountId)
 		{
 			var response = await LedgerEnpoint.GetAccountInfo(accountId);
@@ -34,11 +35,19 @@ namespace TatumIO.Net
 		}
 
 		#endregion
-		#region Offchain
+		#region Blockchain Address
 
 		public async Task<ServiceBaseResponse> CreateDepositAddress(string accountId, int? index)
 		{
 			var response = await OffchainEndpoint.CreateDepositAddress(accountId, index);
+			if (response.IsSuccessful)
+				return new ServiceOkResponse<VirtualAccountAddress>(response.Data ?? throw new Exception(response.ErrorMessage));
+			return new ServiceErrorResponse(response.ErrorMessage ?? "Error", (int)response.StatusCode);
+		}
+
+		public async Task<ServiceBaseResponse> AssignNewAddress(string accountId, string address)
+		{
+			var response = await OffchainEndpoint.AssignNewAddress(accountId, address);
 			if (response.IsSuccessful)
 				return new ServiceOkResponse<VirtualAccountAddress>(response.Data ?? throw new Exception(response.ErrorMessage));
 			return new ServiceErrorResponse(response.ErrorMessage ?? "Error", (int)response.StatusCode);

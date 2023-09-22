@@ -39,5 +39,15 @@ namespace TatumIO.NetTests
 			Assert.IsNotNull(info);
 			Assert.IsNotNull(info.Address);
 		}
+
+		[TestMethod()]
+		public void AssignNewAddressTest()
+		{
+			var response = Client.VirtualAccount.AssignNewAddress(GenerateAccountId, "0x0").Result;
+			Assert.IsTrue(response.Success);
+			var info = response.GetResult<VirtualAccountAddress>();
+			Assert.IsNotNull(info);
+			Assert.IsNotNull(info.Address);
+		}
 	}
 }

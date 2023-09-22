@@ -18,7 +18,6 @@ namespace TatumIO.Net.Tests
 		private readonly string InfoAccountId;
 		private readonly IConfiguration Configuration;
 
-
 		public ClientSdkTests()
 		{
 			var builder = new ConfigurationBuilder().AddUserSecrets(Assembly.GetExecutingAssembly()).AddEnvironmentVariables();
