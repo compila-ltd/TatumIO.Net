@@ -13,7 +13,7 @@ namespace TatumIO.Net
 	internal interface IVirtualAccountHttpApiClient
 	{
 		Task<RestResponse<VirtualAccountInfo>> GetAccountInfo(string accountId);
-		Task<RestResponse<VirtualAccountAddress>> CreateDepositAddress(string accountId, int? index);
+		Task<RestResponse<VirtualAccountAddress>> CreateDepositAddress(string accountId, long? index);
 		Task<RestResponse<VirtualAccountAddress>> AssignNewAddress(string accountId, string address);
 	}
 	internal class VirtualAccountHttpApiClient : BaseHttpApiClient, IVirtualAccountHttpApiClient
@@ -44,7 +44,7 @@ namespace TatumIO.Net
 			return await ExecuteAsync<VirtualAccountInfo>(VirtualAccountRequests.GetAccountInfoRequest(accountId));
 		}
 
-		public async Task<RestResponse<VirtualAccountAddress>> CreateDepositAddress(string accountId, int? index)
+		public async Task<RestResponse<VirtualAccountAddress>> CreateDepositAddress(string accountId, long? index)
 		{
 			return await ExecuteAsync<VirtualAccountAddress>(VirtualAccountRequests.CreateDepositAddress(accountId, index));
 		}

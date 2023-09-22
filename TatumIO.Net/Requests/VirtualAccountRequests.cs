@@ -8,7 +8,7 @@ namespace TatumIO.Net.Requests
 	{
 		public static TatumRequest GetAccountInfoRequest(string accountId) => new TatumRequest(new RestRequest($"/{accountId}", Method.Get)).WithApiKey();
 
-		public static TatumRequest CreateDepositAddress(string accountId, int? index)
+		public static TatumRequest CreateDepositAddress(string accountId, long? index)
 		{
 			var requestPath = $"/{accountId}/address";
 			if (index.HasValue)

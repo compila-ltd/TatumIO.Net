@@ -11,7 +11,7 @@ namespace TatumIO.Net
 	public interface IVirtualAccountOperations
 	{
 		Task<ServiceBaseResponse> GetAccountInfo(string accountId);
-		Task<ServiceBaseResponse> CreateDepositAddress(string accountId, int? index);
+		Task<ServiceBaseResponse> CreateDepositAddress(string accountId, long? index);
 		Task<ServiceBaseResponse> AssignNewAddress(string accountId, string address);
 	}
 	internal class VirtualAccountOperations : IVirtualAccountOperations
@@ -37,7 +37,7 @@ namespace TatumIO.Net
 		#endregion
 		#region Blockchain Address
 
-		public async Task<ServiceBaseResponse> CreateDepositAddress(string accountId, int? index)
+		public async Task<ServiceBaseResponse> CreateDepositAddress(string accountId, long? index)
 		{
 			var response = await OffchainEndpoint.CreateDepositAddress(accountId, index);
 			if (response.IsSuccessful)
