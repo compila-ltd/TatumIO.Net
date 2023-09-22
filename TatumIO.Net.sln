@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.34031.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TatumIO.Net", "TatumIO.Net\TatumIO.Net.csproj", "{F0E3CCC4-6CC7-4A37-BBCD-B972C49EBDDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TatumIO.NetTests", "TatumIO.NetTests\TatumIO.NetTests.csproj", "{EFA1F008-D3BD-4E86-8061-97F4289B6B46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{97EB2E3F-6E85-494E-AA56-C2F0B6087A17}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\publish-nugetorg.yml = .github\workflows\publish-nugetorg.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0E3CCC4-6CC7-4A37-BBCD-B972C49EBDDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0E3CCC4-6CC7-4A37-BBCD-B972C49EBDDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0E3CCC4-6CC7-4A37-BBCD-B972C49EBDDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0E3CCC4-6CC7-4A37-BBCD-B972C49EBDDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA1F008-D3BD-4E86-8061-97F4289B6B46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA1F008-D3BD-4E86-8061-97F4289B6B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA1F008-D3BD-4E86-8061-97F4289B6B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA1F008-D3BD-4E86-8061-97F4289B6B46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6697E4F9-A646-45E8-A3A8-EF28541B5121}
+	EndGlobalSection
+EndGlobal
