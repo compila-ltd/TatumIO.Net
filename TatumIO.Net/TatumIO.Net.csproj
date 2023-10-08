@@ -21,7 +21,7 @@
 		<PackageProjectUrl>https://github.com/compila-ltd/TatumIO.Net</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/compila-ltd/TatumIO.Net</RepositoryUrl>
 		<PackageId>TatumIO.Net</PackageId>
-		<Version>0.2.0</Version>
+		<Version>0.3.0</Version>
 		<Authors>Eyonys Gonzalez Marcaida</Authors>
 		<Company>Compila</Company>
 		<PackageDescription>SDK for TatumIO Api.</PackageDescription>
@@ -33,6 +33,7 @@
 	</PropertyGroup>
 	<PropertyGroup>
 		<PackageIcon>icon.png</PackageIcon>
+		<UserSecretsId>a14fd1f2-9480-41ec-87fc-9c9cf2833201</UserSecretsId>
 	</PropertyGroup>
 	<ItemGroup>
 		<!--
@@ -46,5 +47,8 @@
 	<ItemGroup>
 		<!-- Add a README.md next to the csproj -->
 		<None Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Objects\GasPump\Error\" />
 	</ItemGroup>
 </Project>

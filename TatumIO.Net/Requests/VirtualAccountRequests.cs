@@ -1,7 +1,5 @@
 ﻿using RestSharp;
 
-using TatumIO.Net.Http;
-
 namespace TatumIO.Net.Requests
 {
 	internal static class VirtualAccountRequests
@@ -17,5 +15,7 @@ namespace TatumIO.Net.Requests
 		}
 
 		public static TatumRequest AssignNewAddress(string accountId, string address) => new TatumRequest(new RestRequest($"/{accountId}/address/{address}", Method.Post)).WithApiKey();
+
+		public static TatumRequest AddressIsAssigned(string address, string currency) => new TatumRequest(new RestRequest($"/address/{address}/{currency}", Method.Get)).WithApiKey();
 	}
 }
