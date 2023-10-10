@@ -5,6 +5,7 @@ using Compila.Net.Utils;
 using Microsoft.Extensions.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+using TatumIO.Net.Objects.Subscriptions;
 using TatumIO.Net.Objects.VirtualAccounts;
 
 namespace TatumIO.Net.Tests
@@ -37,6 +38,15 @@ namespace TatumIO.Net.Tests
 			var info = response.GetResult<VirtualAccountInfo>();
 			Assert.IsNotNull(info);
 			Assert.AreEqual(InfoAccountId, info.Id);
+		}
+
+		[TestMethod()]
+		public void ListSubscriptionsTest()
+		{
+			var response = Client.Subscription.ListSubscriptions().Result;
+			Assert.IsTrue(response.Success);
+			var list = response.GetResult<SubscriptionsList>();
+			Assert.IsNotNull(list);
 		}
 	}
 }
