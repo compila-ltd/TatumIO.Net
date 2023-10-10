@@ -11,7 +11,25 @@ namespace TatumIO.Net.Operations
 {
 	public interface IGasPumpOperations
 	{
+		/// <summary>
+		/// Precalculate Addresses for Owner Address.
+		/// </summary>
+		/// <param name="payload">
+		/// Related Owner address to precalculate.
+		/// </param>
+		/// <returns>
+		/// Response containing List of precalculated addresses.
+		/// </returns>
 		Task<ServiceBaseResponse> PrecalculateAddresses(PrecalculateAddressesPayload payload);
+		/// <summary>
+		/// Activate addresses for Owner Address.
+		/// </summary>
+		/// <param name="payload">
+		/// Related Owner Address to activate from.
+		/// </param>
+		/// <returns>
+		/// 
+		/// </returns>
 		Task<ServiceBaseResponse> ActivateAddresses(ActivateAddressesPayload payload);
 		Task<ServiceBaseResponse> AddressIsActivated(string chain, string owner, long index);
 	}

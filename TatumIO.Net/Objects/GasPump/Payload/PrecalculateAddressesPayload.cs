@@ -2,6 +2,9 @@
 
 namespace TatumIO.Net.Objects.GasPump.Payload
 {
+    /// <summary>
+    /// Payload for Addresses precalculation.
+    /// </summary>
     public class PrecalculateAddressesPayload
     {
         [JsonPropertyName("chain")]
