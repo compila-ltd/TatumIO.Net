@@ -5,6 +5,7 @@
 		<Nullable>enable</Nullable>
 
 		<EnablePackageValidation>true</EnablePackageValidation>
+		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 	<PropertyGroup>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>

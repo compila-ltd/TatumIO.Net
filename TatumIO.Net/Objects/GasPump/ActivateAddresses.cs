@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System;
+using System.Text.Json.Serialization;
 
 namespace TatumIO.Net.Objects.GasPump
 {
@@ -6,5 +7,7 @@ namespace TatumIO.Net.Objects.GasPump
 	{
 		[JsonPropertyName("txId")]
 		public string? TxId { get; set; }
+		[JsonPropertyName("signatureId")]
+		public string? SignatureId { get; set; }
 	}
 }

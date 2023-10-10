@@ -89,5 +89,22 @@ namespace TatumIO.NetTests
 			var isActivated = activatedAddress.Activated;
 			Assert.IsTrue(isActivated);
 		}
+
+		[TestMethod()]
+		public void ActivateGasPumpKMS()
+		{
+			var response = Client.GasPump.ActivateAddresses(new ActivateAddressesKMSPayload
+			{
+				Chain = "MATIC",
+				Owner = Configuration["Tatum:Gas-Pump:MATIC:Owner"],
+				From = 14,
+				To = 15,
+				SignatureId = Configuration["Tatum:Gas-Pump:MATIC:SignatureId"]
+			}).Result;
+
+			Assert.IsTrue(response.Success);
+			var signatureId = response.GetResult<ActivateAddresses>().SignatureId;
+			Assert.IsNotNull(signatureId);
+		}
 	}
 }

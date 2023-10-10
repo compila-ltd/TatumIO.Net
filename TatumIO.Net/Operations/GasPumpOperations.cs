@@ -22,15 +22,22 @@ namespace TatumIO.Net.Operations
 		/// </returns>
 		Task<ServiceBaseResponse> PrecalculateAddresses(PrecalculateAddressesPayload payload);
 		/// <summary>
-		/// Activate addresses for Owner Address.
+		/// Activate addresses with Tatum.
 		/// </summary>
 		/// <param name="payload">
-		/// Related Owner Address to activate from.
+		/// Related Owner address information to activate from.
 		/// </param>
 		/// <returns>
-		/// 
+		/// Response containing TxId or Signature Id of transaction.
 		/// </returns>
-		Task<ServiceBaseResponse> ActivateAddresses(ActivateAddressesPayload payload);
+		Task<ServiceBaseResponse> ActivateAddresses(IGasPumpActivationPayload payload);
+		/// <summary>
+		/// Check if address is activated.
+		/// </summary>
+		/// <param name="chain">Chain or network.</param>
+		/// <param name="owner">Owner address.</param>
+		/// <param name="index">Precalculated address index.</param>
+		/// <returns></returns>
 		Task<ServiceBaseResponse> AddressIsActivated(string chain, string owner, long index);
 	}
 
@@ -53,7 +60,7 @@ namespace TatumIO.Net.Operations
 			return new ServiceErrorResponse(response.ErrorMessage ?? "Error", (int)response.StatusCode);
 		}
 
-		public async Task<ServiceBaseResponse> ActivateAddresses(ActivateAddressesPayload payload)
+		public async Task<ServiceBaseResponse> ActivateAddresses(IGasPumpActivationPayload payload)
 		{
 			var response = await GasPumpEnpoint.ActivateAddresses(payload);
 

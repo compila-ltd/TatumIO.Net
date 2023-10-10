@@ -22,7 +22,7 @@ namespace TatumIO.Net.ApiClients
 		public async Task<RestResponse<List<string>>> PrecalculateAddresses(PrecalculateAddressesPayload payload) =>
 			await ExecuteAsync<List<string>>(GasPumpRequests.PrecalculateAddresses(payload));
 
-		public async Task<RestResponse<ActivateAddresses>> ActivateAddresses(ActivateAddressesPayload payload) =>
+		public async Task<RestResponse<ActivateAddresses>> ActivateAddresses(IGasPumpActivationPayload payload) =>
 			await ExecuteAsync<ActivateAddresses>(GasPumpRequests.ActivateAddresses(payload));
 
 		public async Task<RestResponse<AddressIsActivated>> AddressIsActivated(string chain, string owner, long index) =>
