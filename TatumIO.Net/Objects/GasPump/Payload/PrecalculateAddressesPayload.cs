@@ -3,7 +3,7 @@
 namespace TatumIO.Net.Objects.GasPump.Payload
 {
 	/// <summary>
-	/// Payload for Addresses precalculation.
+	/// Payload related to Address precalculation.
 	/// </summary>
 	public class PrecalculateAddressesPayload
 	{
@@ -13,7 +13,7 @@ namespace TatumIO.Net.Objects.GasPump.Payload
 		[JsonPropertyName("chain")]
 		public string? Chain { get; set; }
 		/// <summary>
-		/// Owner address to precalculate.
+		/// Owner address to precalculate from.
 		/// </summary>
 		[JsonPropertyName("owner")]
 		public string? Owner { get; set; }

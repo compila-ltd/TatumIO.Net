@@ -12,32 +12,32 @@ namespace TatumIO.Net.Operations
 	public interface IGasPumpOperations
 	{
 		/// <summary>
-		/// Precalculate Addresses for Owner Address.
+		/// Precalculate addresses from Owner Address.
 		/// </summary>
 		/// <param name="payload">
-		/// Related Owner address to precalculate.
+		/// Related Owner address payload to precalculate from.
 		/// </param>
 		/// <returns>
 		/// Response containing List of precalculated addresses.
 		/// </returns>
 		Task<ServiceBaseResponse> PrecalculateAddresses(PrecalculateAddressesPayload payload);
 		/// <summary>
-		/// Activate addresses with Tatum.
+		/// Activate addresses in blockchain.
 		/// </summary>
 		/// <param name="payload">
-		/// Related Owner address information to activate from.
+		/// Related Owner address payload to activate from.
 		/// </param>
 		/// <returns>
-		/// Response containing TxId or Signature Id of transaction.
+		/// Response containing TxId or Signature Id related to activation transaction.
 		/// </returns>
 		Task<ServiceBaseResponse> ActivateAddresses(IGasPumpActivationPayload payload);
 		/// <summary>
-		/// Check if address is activated.
+		/// Check whether an address is activated or not.
 		/// </summary>
 		/// <param name="chain">Chain or network.</param>
 		/// <param name="owner">Owner address.</param>
 		/// <param name="index">Precalculated address index.</param>
-		/// <returns></returns>
+		/// <returns>Response containing activation verification.</returns>
 		Task<ServiceBaseResponse> AddressIsActivated(string chain, string owner, long index);
 	}
 

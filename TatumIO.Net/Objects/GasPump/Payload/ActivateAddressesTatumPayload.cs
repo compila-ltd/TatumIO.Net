@@ -3,14 +3,14 @@
 namespace TatumIO.Net.Objects.GasPump.Payload
 {
 	/// <summary>
-	/// Generic Payload for Addresses activation.
+	/// Payload related to Address activation.
 	/// </summary>
 	public interface IGasPumpActivationPayload
 	{
 	}
 
 	/// <summary>
-	/// Payload for Addresses activation.
+	/// Payload related to Address activation by Tatum.
 	/// </summary>
 	public class ActivateAddressesTatumPayload : IGasPumpActivationPayload
 	{
@@ -42,7 +42,7 @@ namespace TatumIO.Net.Objects.GasPump.Payload
 	}
 
 	/// <summary>
-	/// Payload for Addresses activation.
+	/// Payload related to Address activation by KMS.
 	/// </summary>
 	public class ActivateAddressesKMSPayload : IGasPumpActivationPayload
 	{
