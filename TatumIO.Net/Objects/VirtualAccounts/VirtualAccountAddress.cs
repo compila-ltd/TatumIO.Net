@@ -9,7 +9,7 @@ namespace TatumIO.Net.Objects.VirtualAccounts
 		[JsonPropertyName("currency")]
 		public string? Currency { get; set; }
 		[JsonPropertyName("destinationTag")]
-		public string? DestinationTag { get; set; }
+		public long DestinationTag { get; set; }
 		[JsonPropertyName("xpub")]
 		public string? Xpub { get; set; }
 		[JsonPropertyName("memo")]
