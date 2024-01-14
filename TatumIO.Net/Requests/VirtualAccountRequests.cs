@@ -4,7 +4,7 @@ namespace TatumIO.Net.Requests
 {
 	internal static class VirtualAccountRequests
 	{
-		public static TatumRequest GetAccountInfoRequest(string accountId) => new TatumRequest(new RestRequest($"/{accountId}", Method.Get)).WithApiKey();
+		public static TatumRequest GetAccountInfo(string accountId) => new TatumRequest(new RestRequest($"/{accountId}", Method.Get)).WithApiKey();
 
 		public static TatumRequest CreateDepositAddress(string accountId, long? index)
 		{
