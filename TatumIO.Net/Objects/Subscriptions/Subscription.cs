@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace TatumIO.Net.Objects.Subscriptions
 {
-	public class SubscriptionsList : List<Subscription>
+    public class SubscriptionsList : List<Subscription>
 	{
 
 	}

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace TatumIO.Net.Objects.GasPump
 {
-	public class ActivateAddresses
+    public class ActivateAddresses
 	{
 		[JsonPropertyName("txId")]
 		public string? TxId { get; set; }

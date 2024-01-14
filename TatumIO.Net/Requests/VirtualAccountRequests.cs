@@ -1,5 +1,7 @@
 ﻿using RestSharp;
 
+using TatumIO.Net.QueryParams.VirtualAccounts;
+
 namespace TatumIO.Net.Requests
 {
 	internal static class VirtualAccountRequests
@@ -17,5 +19,23 @@ namespace TatumIO.Net.Requests
 		public static TatumRequest AssignNewAddress(string accountId, string address) => new TatumRequest(new RestRequest($"/{accountId}/address/{address}", Method.Post)).WithApiKey();
 
 		public static TatumRequest AddressIsAssigned(string address, string currency) => new TatumRequest(new RestRequest($"/address/{address}/{currency}", Method.Get)).WithApiKey();
-	}
+
+        public static TatumRequest ListDepositsByProduct(DepositsQueryParams depositsQueryParams)
+		{
+			var requestPath = $"deposits";
+			if (depositsQueryParams != null)
+                requestPath += $"{depositsQueryParams}";
+
+			return new TatumRequest(new RestRequest(requestPath, Method.Get)).WithApiKey();
+		}
+
+		public static TatumRequest GetDepositsCountByProduct(DepositsQueryParams depositsQueryParams)
+		{
+			var requestPath = $"deposits/count";
+			if (depositsQueryParams != null)
+                requestPath += $"{depositsQueryParams}";
+
+			return new TatumRequest(new RestRequest(requestPath, Method.Get)).WithApiKey();
+		}
+    }
 }

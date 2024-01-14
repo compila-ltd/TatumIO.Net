@@ -30,7 +30,8 @@ namespace TatumIO.Net
 	{
 		public static IEndpointData ServiceUrl => new TatumEndpointService(null, null);
 		public static IEndpointData VirtualAccountsLedgerUrl => new EndpointSite($"{ServiceUrl.BaseUrl}/ledger/account");
-		public static IEndpointData VirtualAccountsOffchainUrl => new EndpointSite($"{ServiceUrl.BaseUrl}/offchain/account");
+        public static IEndpointData LedgerUrl => new EndpointSite($"{ServiceUrl.BaseUrl}/ledger");
+        public static IEndpointData VirtualAccountsOffchainUrl => new EndpointSite($"{ServiceUrl.BaseUrl}/offchain/account");
 		public static IEndpointData GasPumpUrl => new EndpointSite($"{ServiceUrl.BaseUrl}/gas-pump");
 		public static IEndpointData SubscriptionsUrl => new EndpointSite($"{ServiceUrl.BaseUrl}/subscription");
 	}
