@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace TatumIO.Net.Objects.VirtualAccounts
 {
-    public class VirtualAccountDepositsList : List<VirtualAccountDeposit>
+	public class VirtualAccountDepositsList : List<VirtualAccountDeposit>
     {
 
     }

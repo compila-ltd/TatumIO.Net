@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-
-using Compila.Net.Utils.Http;
+﻿using Compila.Net.Utils.Http;
 
 using RestSharp;
 
@@ -12,7 +9,7 @@ using TatumIO.Net.Requests;
 namespace TatumIO.Net.ApiClients
 {
 
-    internal class GasPumpHttpApiClient : BaseTatumHttpApiClient
+	internal class GasPumpHttpApiClient : BaseTatumHttpApiClient
 	{
 		public GasPumpHttpApiClient(IEndpointData endpointData, string apiKey) : base(endpointData, apiKey)
 		{

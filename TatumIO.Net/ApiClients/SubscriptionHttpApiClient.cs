@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-using Compila.Net.Utils.Http;
+﻿using Compila.Net.Utils.Http;
 
 using RestSharp;
 

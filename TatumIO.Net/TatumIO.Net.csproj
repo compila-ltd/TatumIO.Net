@@ -3,10 +3,16 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<Nullable>enable</Nullable>
-
+		<ImplicitUsings>enable</ImplicitUsings>
 		<EnablePackageValidation>true</EnablePackageValidation>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="RestSharp" Version="110.2.0" />
+		<PackageReference Include="Compila.Net.Utils" Version="1.0.17" />
+	</ItemGroup>
+
 	<PropertyGroup>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 
@@ -14,28 +20,27 @@
 		<NoWarn>$(NoWarn);CS1591</NoWarn>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Compila.Net.Utils" Version="1.0.5" />
-	</ItemGroup>
-
 	<PropertyGroup>
 		<PackageProjectUrl>https://github.com/compila-ltd/TatumIO.Net</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/compila-ltd/TatumIO.Net</RepositoryUrl>
 		<PackageId>TatumIO.Net</PackageId>
-		<Version>0.4.2</Version>
+		<Version>0.4.3</Version>
 		<Authors>Eyonys Gonzalez Marcaida</Authors>
 		<Company>Compila</Company>
 		<PackageDescription>SDK for TatumIO Api.</PackageDescription>
 		<PackageTags>tatumio, compila, crypto</PackageTags>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
+
 	<PropertyGroup>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
+
 	<PropertyGroup>
 		<PackageIcon>icon.png</PackageIcon>
 		<UserSecretsId>a14fd1f2-9480-41ec-87fc-9c9cf2833201</UserSecretsId>
 	</PropertyGroup>
+
 	<ItemGroup>
 		<!--
         Add an icon.png next to the csproj:
@@ -45,11 +50,14 @@
     -->
 		<None Include="icon.png" Pack="true" PackagePath="" />
 	</ItemGroup>
+
 	<ItemGroup>
 		<!-- Add a README.md next to the csproj -->
 		<None Include="README.md" Pack="true" PackagePath="" />
 	</ItemGroup>
+
 	<ItemGroup>
-	  <Folder Include="Objects\GasPump\Error\" />
+		<Folder Include="Objects\GasPump\Error\" />
 	</ItemGroup>
+
 </Project>

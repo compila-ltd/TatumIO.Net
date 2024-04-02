@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace TatumIO.Net.Objects.GasPump
+﻿namespace TatumIO.Net.Objects.GasPump
 {
 	/// <summary>
 	/// List of addresses.

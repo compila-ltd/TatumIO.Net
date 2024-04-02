@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-using Compila.Net.Utils.Http;
+﻿using Compila.Net.Utils.Http;
 
 using RestSharp;
 
@@ -10,7 +8,7 @@ using TatumIO.Net.Requests;
 
 namespace TatumIO.Net.ApiClients
 {
-    internal class VirtualAccountHttpApiClient : BaseTatumHttpApiClient
+	internal class VirtualAccountHttpApiClient : BaseTatumHttpApiClient
     {
         public VirtualAccountHttpApiClient(IEndpointData endpointData, string apiKey) : base(endpointData, apiKey) { }
 

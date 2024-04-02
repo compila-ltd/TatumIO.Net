@@ -1,7 +1,5 @@
 ﻿using System.Reflection;
 
-using Compila.Net.Utils;
-
 using Microsoft.Extensions.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

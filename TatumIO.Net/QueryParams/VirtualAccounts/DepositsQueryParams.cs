@@ -1,8 +1,8 @@
-﻿using Compila.Net.Utils.Http.Requests;
+﻿using Compila.Net.Utils.Http.RequestsParameters;
 
 namespace TatumIO.Net.QueryParams.VirtualAccounts
 {
-    public class DepositsQueryParams : RequestParametersBase
+	public class DepositsQueryParams : RequestParametersBase
     {
         public DepositsQueryParams()
         {
