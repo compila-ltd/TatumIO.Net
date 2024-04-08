@@ -50,7 +50,7 @@ namespace TatumIO.Net.Operations
 			var response = await GasPumpEnpoint.PrecalculateAddresses(payload);
 
 			if (response.IsSuccessful)
-				return new TatumOkResponse<List<string>>(response.Data ?? throw new System.Exception(response.ErrorMessage));
+				return new TatumOkResponse<List<string>>(response.Data ?? throw new Exception(response.ErrorMessage));
 
 			return new TatumErrorResponse(response.ErrorMessage ?? "Error");
 		}
@@ -60,7 +60,7 @@ namespace TatumIO.Net.Operations
 			var response = await GasPumpEnpoint.ActivateAddresses(payload);
 
 			if (response.IsSuccessful)
-				return new TatumOkResponse<ActivateAddresses>(response.Data ?? throw new System.Exception(response.ErrorMessage));
+				return new TatumOkResponse<ActivateAddresses>(response.Data ?? throw new Exception(response.ErrorMessage));
 
 			return new TatumErrorResponse(response.ErrorMessage ?? "Error");
 		}
@@ -70,7 +70,7 @@ namespace TatumIO.Net.Operations
 			var response = await GasPumpEnpoint.AddressIsActivated(chain, owner, index);
 
 			if (response.IsSuccessful)
-				return new TatumOkResponse<AddressIsActivated>(response.Data ?? throw new System.Exception(response.ErrorMessage));
+				return new TatumOkResponse<AddressIsActivated>(response.Data ?? throw new Exception(response.ErrorMessage));
 			return new TatumErrorResponse(response.ErrorMessage ?? "Error");
 		}
 	}

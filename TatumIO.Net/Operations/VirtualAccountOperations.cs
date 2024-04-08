@@ -6,10 +6,38 @@ namespace TatumIO.Net.Operations
 {
 	public interface IVirtualAccountOperations
 	{
+		/// <summary>
+		/// Gets Tatum Virtual Account information
+		/// </summary>
+		/// <param name="accountId">Tatum virtual account id</param>
+		/// <returns>TatumOkResponse with VirtualAccountInfo object</returns>
+		/// <returns>TatumErrorResponse with error info</returns>
 		Task<TatumBaseResponse> GetAccountInfo(string accountId);
+		/// <summary>
+		/// Create deposit address from account
+		/// </summary>
+		/// <param name="accountId">Tatum virtual account id</param>
+		/// <param name="index">Index to generate address</param>
+		/// <returns>TatumOkResponse with VirtualAccountAddress object</returns>
+		/// <returns>TatumErrorResponse with error info</returns>
 		Task<TatumBaseResponse> CreateDepositAddress(string accountId, long? index);
+		/// <summary>
+		/// Assigns new address to virtual account
+		/// </summary>
+		/// <param name="accountId">Tatum virtual account id</param>
+		/// <param name="address">Wallet address to assign</param>
+		/// <returns>TatumOkResponse with VirtualAccountAddress object</returns>
+		/// <returns>TatumErrorResponse with error info</returns>
 		Task<TatumBaseResponse> AssignNewAddress(string accountId, string address);
+		/// <summary>
+		/// Checks if wallet address is assigned to a virtual account
+		/// </summary>
+		/// <param name="address">Wallet address to check</param>
+		/// <param name="currency">Currency to check</param>
+		/// <returns>TatumOkResponse with VirtualAccountInfo</returns>
+		/// <returns>TatumErrorResponse with error info</returns>
 		Task<TatumBaseResponse> AddressIsAssigned(string address, string currency);
+
 		Task<TatumBaseResponse> GetDepositsForProduct(DepositsQueryParams depositsQueryParams);
 		Task<TatumBaseResponse> GetDepositsCountForProduct(DepositsQueryParams depositsQueryParams);
 	}

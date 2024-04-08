@@ -33,7 +33,7 @@ namespace TatumIO.NetTests
 		[TestMethod()]
 		public void CreateDepositAddressTest()
 		{
-			var response = Client.VirtualAccount.CreateDepositAddress(GenerateAccountId, null).Result;
+			var response = Client.VirtualAccount.CreateDepositAddress(GenerateAccountId, 1712085431).Result;
 			Assert.IsTrue(response.Success);
 			var address = response.GetResult<VirtualAccountAddress>();
 			Assert.IsNotNull(address);
