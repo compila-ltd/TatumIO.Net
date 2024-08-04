@@ -1,8 +1,6 @@
-﻿using Compila.Net.Utils.ServiceResponses;
-
-namespace TatumIO.Net
+﻿namespace TatumIO.Net
 {
-	public class TatumBaseResponse
+    public class TatumBaseResponse
 	{
 		public bool Success { get; set; }
 

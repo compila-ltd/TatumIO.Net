@@ -2,12 +2,7 @@
 
 namespace TatumIO.Net.Objects.VirtualAccounts
 {
-	public class VirtualAccountDepositsList : List<VirtualAccountDeposit>
-    {
-
-    }
-
-    public class VirtualAccountDeposit
+	public class VirtualAccountDeposit
     {
         [JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -39,6 +34,11 @@ namespace TatumIO.Net.Objects.VirtualAccounts
         public string? Reference { get; set; }
         [JsonPropertyName("accountId")]
         public string? AccountId { get; set; }
+    }
+
+    public class VirtualAccountDepositsList : List<VirtualAccountDeposit>
+    {
+
     }
 
     public class VirtualAccountDepositsCount
