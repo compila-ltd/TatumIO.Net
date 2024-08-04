@@ -7,12 +7,15 @@ namespace TatumIO.Net
 		public IVirtualAccountOperations VirtualAccount { get; }
 		public IGasPumpOperations GasPump { get; }
 		public ISubscriptionOperations Subscription { get; }
+		public IUTXOBlockchainOperations UTXO { get; }
+
 
 		public ClientSdk(string apiKey)
 		{
 			VirtualAccount = new VirtualAccountOperations(apiKey);
 			GasPump = new GasPumpOperations(apiKey);
 			Subscription = new SubscriptionOperations(apiKey);
+			UTXO = new UTXOBlockchainOperations(apiKey);
 		}
 	}
 }

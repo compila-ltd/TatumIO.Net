@@ -34,6 +34,7 @@ namespace TatumIO.Net
         public static IEndpointData VirtualAccountsOffchainUrl => new EndpointSite($"{ServiceUrl.BaseUrl}/offchain/account");
 		public static IEndpointData GasPumpUrl => new EndpointSite($"{ServiceUrl.BaseUrl}/gas-pump");
 		public static IEndpointData SubscriptionsUrl => new EndpointSite($"{ServiceUrl.BaseUrl}/subscription");
+		public static IEndpointData UTXOBlockchainUrl =>new EndpointSite($"{ServiceUrl.BaseUrl}");
 	}
 
 	public class TatumIOV4Endpoints
