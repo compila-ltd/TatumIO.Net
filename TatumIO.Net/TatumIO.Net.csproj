@@ -9,8 +9,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="RestSharp" Version="111.4.1" />
-		<PackageReference Include="Compila.Net.Utils" Version="1.0.22" />
+		<PackageReference Include="Compila.Net.Utils" Version="1.0.23" />
 	</ItemGroup>
 
 	<PropertyGroup>
