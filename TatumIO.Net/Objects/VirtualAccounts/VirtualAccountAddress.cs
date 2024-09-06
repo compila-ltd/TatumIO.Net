@@ -19,4 +19,22 @@ namespace TatumIO.Net.Objects.VirtualAccounts
 		[JsonPropertyName("message")]
 		public string? Message { get; set; }
 	}
+
+	public class VirtualAccountAddressesList : List<VirtualAccountAddress>
+	{
+
+    }
+
+    public class VirtualAccountAddressToGenerate
+    {
+		[JsonPropertyName("accountId")]
+        public long? Index { get; set; }
+		[JsonPropertyName("derivationKey")]
+        public int Count { get; set; }
+    }
+
+	public class MultipleVirtualAccountAddressToGenerate
+	{
+		
+    }
 }

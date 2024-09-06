@@ -2,11 +2,15 @@
 
 namespace TatumIO.Net.Objects.GasPump
 {
-    public class ActivateAddresses
-	{
-		[JsonPropertyName("txId")]
-		public string? TxId { get; set; }
-		[JsonPropertyName("signatureId")]
-		public string? SignatureId { get; set; }
-	}
+    public class ActivateAddresses : SignatureTransactionId
+    {
+        [JsonPropertyName("txId")]
+        public string? TxId { get; set; }
+    }
+
+    public class SignatureTransactionId
+    {
+        [JsonPropertyName("signatureId")]
+        public string? SignatureId { get; set; }
+    }
 }

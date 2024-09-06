@@ -23,11 +23,17 @@ namespace TatumIO.Net.ApiClients
         public async Task<RestResponse<VirtualAccountAddress>> CreateDepositAddress(string accountId, long? index) =>
             await ExecuteAsync<VirtualAccountAddress>(VirtualAccountRequests.CreateDepositAddress(accountId, index));
 
+        /*public async Task<RestResponse<VirtualAccountAddressesList>> CreateMultipleDepositAddresses(string accountId, long? index, int count) =>
+            await ExecuteAsync<VirtualAccountAddressesList>(VirtualAccountRequests.CreateMultipleDepositAddresses(accountId, index, count));*/
+
         public async Task<RestResponse<VirtualAccountAddress>> AssignNewAddress(string accountId, string address) =>
             await ExecuteAsync<VirtualAccountAddress>(VirtualAccountRequests.AssignNewAddress(accountId, address));
 
         public async Task<RestResponse<VirtualAccountInfo>> AddressIsAssigned(string address, string currency) =>
             await ExecuteAsync<VirtualAccountInfo>(VirtualAccountRequests.AddressIsAssigned(address, currency));
+
+        public async Task<RestResponse<VirtualAccountAddressesList>> GetAccountAddressesList(string accountId) =>
+            await ExecuteAsync<VirtualAccountAddressesList>(VirtualAccountRequests.GetAccountAddressesList(accountId));
 
         #endregion
         #region Deposits

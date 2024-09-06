@@ -16,7 +16,9 @@ namespace TatumIO.Net.ApiClients
 
 		}
 
-		public async Task<RestResponse<List<string>>> PrecalculateAddresses(PrecalculateAddressesPayload payload) =>
+        #region Addresses
+
+        public async Task<RestResponse<List<string>>> PrecalculateAddresses(PrecalculateAddressesPayload payload) =>
 			await ExecuteAsync<List<string>>(GasPumpRequests.PrecalculateAddresses(payload));
 
 		public async Task<RestResponse<ActivateAddresses>> ActivateAddresses(IGasPumpActivationPayload payload) =>
@@ -24,5 +26,8 @@ namespace TatumIO.Net.ApiClients
 
 		public async Task<RestResponse<AddressIsActivated>> AddressIsActivated(string chain, string owner, long index) =>
 			await ExecuteAsync<AddressIsActivated>(GasPumpRequests.AddressIsActivated(chain, owner, index));
-	}
+
+        #endregion
+        
+    }
 }
