@@ -20,6 +20,11 @@ namespace TatumIO.Net.Requests
 
         public static TatumRequest AddressIsAssigned(string address, string currency) => new TatumRequest(new RestRequest($"/address/{address}/{currency}", Method.Get)).WithApiKey();
 
+        public static TatumRequest RemoveAssignedAddress(string accountId, string address) => new TatumRequest(new RestRequest($"/{accountId}/address/{address}", Method.Delete)).WithApiKey();
+
+        public static TatumRequest RemoveAssignedAddress(string accountId, string address, long index) => new TatumRequest(new RestRequest($"/{accountId}/address/{address}?index={index}", Method.Delete))
+            .WithApiKey();
+
         public static TatumRequest ListDepositsByProduct(DepositsQueryParams depositsQueryParams)
         {
             var requestPath = $"deposits";

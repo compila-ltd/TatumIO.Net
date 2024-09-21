@@ -1,4 +1,5 @@
-﻿using Compila.Net.Utils.Http;
+﻿
+using Compila.Net.Utils.Http;
 
 using RestSharp;
 
@@ -8,7 +9,7 @@ using TatumIO.Net.Requests;
 
 namespace TatumIO.Net.ApiClients
 {
-	internal class VirtualAccountHttpApiClient : BaseTatumHttpApiClient
+    internal class VirtualAccountHttpApiClient : BaseTatumHttpApiClient
     {
         public VirtualAccountHttpApiClient(IEndpointData endpointData, string apiKey) : base(endpointData, apiKey) { }
 
@@ -22,6 +23,12 @@ namespace TatumIO.Net.ApiClients
 
         public async Task<RestResponse<VirtualAccountAddress>> CreateDepositAddress(string accountId, long? index) =>
             await ExecuteAsync<VirtualAccountAddress>(VirtualAccountRequests.CreateDepositAddress(accountId, index));
+
+        public async Task<RestResponse> RemovedAssignedAddress(string accountId, string address) =>
+            await ExecuteAsync(VirtualAccountRequests.RemoveAssignedAddress(accountId, address));
+
+        public async Task<RestResponse> RemovedAssignedAddress(string accountId, string address, long index) =>
+            await ExecuteAsync(VirtualAccountRequests.RemoveAssignedAddress(accountId, address, index));
 
         /*public async Task<RestResponse<VirtualAccountAddressesList>> CreateMultipleDepositAddresses(string accountId, long? index, int count) =>
             await ExecuteAsync<VirtualAccountAddressesList>(VirtualAccountRequests.CreateMultipleDepositAddresses(accountId, index, count));*/

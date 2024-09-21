@@ -30,6 +30,23 @@ namespace TatumIO.Net.Operations
         /// <returns>TatumErrorResponse with error info</returns>
         Task<TatumBaseResponse> AssignNewAddress(string accountId, string address);
         /// <summary>
+        /// Removes assigned address from virtual account
+        /// </summary>
+        /// <param name="accountId">Tatum virtual account id</param>
+        /// <param name="address">Wallet address to remove</param>
+        /// <returns>TatumOkResponse in case of success</returns>
+        /// <returns>TatumErrorResponse with error info</returns>
+        Task<TatumBaseResponse> RemoveWalletAddress(string accountId, string address);
+        /// <summary>
+        /// Removes assigned address from virtual account
+        /// </summary>
+        /// <param name="accountId">Tatum virtual account id</param>
+        /// <param name="address">Wallet address to remove</param>
+        /// <param name="index">Index of address to remove</param>
+        /// <returns>TatumOkResponse in case of success</returns>
+        /// <returns>TatumErrorResponse with error info</returns>
+        Task<TatumBaseResponse> RemoveWalletAddress(string accountId, string address, long index);
+        /// <summary>
         /// Checks if wallet address is assigned to a virtual account
         /// </summary>
         /// <param name="address">Wallet address to check</param>
@@ -73,6 +90,22 @@ namespace TatumIO.Net.Operations
             var response = await OffchainEndpoint.CreateDepositAddress(accountId, index);
             if (response.IsSuccessful)
                 return new TatumOkResponse<VirtualAccountAddress>(response.Data ?? throw new Exception(response.ErrorMessage));
+            return new TatumErrorResponse(response.ErrorMessage ?? "Error");
+        }
+
+        public async Task<TatumBaseResponse> RemoveWalletAddress(string accountId, string address)
+        {
+            var response = await OffchainEndpoint.RemovedAssignedAddress(accountId, address);
+            if (response.IsSuccessful)
+                return new TatumOkResponse();
+            return new TatumErrorResponse(response.ErrorMessage ?? "Error");
+        }
+
+        public async Task<TatumBaseResponse> RemoveWalletAddress(string accountId, string address, long index)
+        {
+            var response = await OffchainEndpoint.RemovedAssignedAddress(accountId, address, index);
+            if (response.IsSuccessful)
+                return new TatumOkResponse();
             return new TatumErrorResponse(response.ErrorMessage ?? "Error");
         }
 
