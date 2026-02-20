@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 
 using Microsoft.Extensions.Configuration;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using TatumIO.Net;
 using TatumIO.Net.Objects.GasPump;
@@ -64,14 +63,14 @@ namespace TatumIO.NetTests
 			Assert.IsTrue(response.Success);
 			var addressesList = response.GetResult<List<string>>();
 			Assert.IsNotNull(addressesList);
-			Assert.AreEqual(50, addressesList.Count);
+			Assert.HasCount(50, addressesList);
 			Assert.AreEqual(Configuration["Tatum:Gas-Pump:MATIC:Pre-Calculated"], addressesList[0]);
 		}
 
 		[TestMethod()]
 		public void AddressIsAsignedTest()
 		{
-			var response = Client.VirtualAccount.AddressIsAssigned(Configuration["Tatum:Virtual-Accounts:MATIC:Address"], "MATIC").Result;
+			var response = Client.VirtualAccount.AddressIsAssigned(Configuration["Tatum:Virtual-Accounts:MATIC:Address"] ?? "", "MATIC").Result;
 			Assert.IsTrue(response.Success);
 			var account = response.GetResult<VirtualAccountInfo>();
 			var isAssigned = account.Id?.Equals(Configuration["Tatum:Virtual-Accounts:MATIC:Id"]);
@@ -81,7 +80,7 @@ namespace TatumIO.NetTests
 		[TestMethod()]
 		public void AddressIsActivated()
 		{
-			var response = Client.GasPump.AddressIsActivated("MATIC", Configuration["Tatum:Gas-Pump:MATIC:Owner"], 0).Result;
+			var response = Client.GasPump.AddressIsActivated("MATIC", Configuration["Tatum:Gas-Pump:MATIC:Owner"] ?? "", 0).Result;
 			Assert.IsTrue(response.Success);
 			var activatedAddress = response.GetResult<AddressIsActivated>();
 			var isActivated = activatedAddress.Activated;

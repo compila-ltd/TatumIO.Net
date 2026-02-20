@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Compila.Net.Utils" Version="1.0.23" />
+		<PackageReference Include="Compila.Net.Utils" Version="1.0.30" />
 	</ItemGroup>
 
 	<PropertyGroup>
@@ -22,7 +22,7 @@
 		<PackageProjectUrl>https://github.com/compila-ltd/TatumIO.Net</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/compila-ltd/TatumIO.Net</RepositoryUrl>
 		<PackageId>TatumIO.Net</PackageId>
-		<Version>0.5.0</Version>
+		<Version>0.5.1</Version>
 		<Authors>Eyonys Gonzalez Marcaida</Authors>
 		<Company>Compila</Company>
 		<PackageDescription>SDK for TatumIO Api.</PackageDescription>
